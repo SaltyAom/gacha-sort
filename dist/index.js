@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=e=>new Promise(t=>{let l=!0;for(;l;){let r=[...e],o=[];for(;r.length;){let t=Math.floor(Math.random()*e.length-o.length);o.push(r[t]),r.splice(t,1)}o.every((e,t)=>!t||e>=o[t-1])&&(l=!1,t(o))}});

@@ -1,0 +1,44 @@
+{
+    "name": "gacha-sort",
+    "description": "Randomly sort until entire array is sorted",
+    "version": "1.0.0",
+    "main": "index.js",
+    "typings": "index.d.ts",
+    "keywords": [
+        "gacha sort",
+        "random sort",
+        "slept sort"
+    ],
+    "repository": "https://github.com/SaltyAom/gacha-sort",
+    "bugs": "https://github.com/SaltyAom/gacha-sort/issues",
+    "homepage": "https://github.com/SaltyAom/gacha-sort",
+    "license": "MIT",
+    "scripts": {
+        "prebuild": "rm -rf dist",
+        "build": "yarn build:js && yarn build:cjs && yarn build:es6 && yarn build:esm && yarn build:umd && yarn compress",
+        "build:js": "tsc",
+        "build:cjs": "tsc --project tsconfig-cjs.json",
+        "build:es6": "tsc --project tsconfig-es6.json",
+        "build:esm": "tsc --project tsconfig-esm.json",
+        "build:umd": "tsc --project tsconfig-umd.json",
+        "compress": "yarn compress:cjs && yarn compress:es6 && yarn compress:esm && yarn compress:umd",
+        "compress:cjs": "terser dist/index.js -o dist/index.js --compress --mangle",
+        "compress:es6": "terser dist/es6/index.js -o dist/es6/index.js --compress --mangle",
+        "compress:esm": "terser dist/esm/index.js -o dist/esm/index.js --compress --mangle",
+        "compress:umd": "terser dist/umd/index.js -o dist/umd/index.js --compress --mangle",
+        "release": "yarn test && yarn build && yarn publish --non-interactive",
+        "test": "jest",
+        "test:clear": "jest --clearCache"
+    },
+    "devDependencies": {
+        "@babel/preset-env": "^7.9.5",
+        "@babel/preset-typescript": "^7.9.0",
+        "@babel/types": "^7.9.5",
+        "@types/jest": "^25.2.1",
+        "jest": "^25.4.0",
+        "terser": "^4.6.12",
+        "ts-jest": "^25.4.0",
+        "typescript": "^3.8.3"
+    },
+    "dependencies": {}
+}

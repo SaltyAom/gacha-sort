@@ -1,0 +1,12 @@
+__tests__
+.DS_Store
+.github
+.gitignore
+node_modules
+babel.config.js
+jest.config.js
+tsconfig-cjs.json
+tsconfig-es6.json
+tsconfig-esm.json
+tsconfig-umd.json
+yarn.lock

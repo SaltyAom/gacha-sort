@@ -1,0 +1,1 @@
+export default e=>new Promise(t=>{let l=!0;for(;l;){let o=[...e],r=[];for(;o.length;){let t=Math.floor(Math.random()*e.length-r.length);r.push(o[t]),o.splice(t,1)}r.every((e,t)=>!t||e>=r[t-1])&&(l=!1,t(r))}});
